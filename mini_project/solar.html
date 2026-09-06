@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar Energy Calculator</title>
+</head>
+<body>
+
+  <div class="container">
+
+    <main class="calculator-panel">
+
+      <header class="calculator-header">
+        <h1 class="calculator-title">Solar Energy Calculator</h1>
+        <p class="calculator-subtitle">Aplikasi untuk menghitung estimasi daya dan energi yang dihasilkan oleh panel surya</p>
+      </header>
+
+      <section class="card card-spesifikasi">
+        <h2 class="card-title">Spesifikasi &amp; Cahaya</h2>
+
+        <div class="form-group">
+          <label for="luas-panel" class="form-label">Luas Panel (m²)</label>
+          <input type="number" id="luas-panel" name="luas-panel" class="form-input" placeholder="Contoh: 1.6" step="any" min="0">
+        </div>
+
+        <div class="form-group">
+          <label for="intensitas-cahaya" class="form-label">Intensitas Cahaya (W/m²)</label>
+          <input type="number" id="intensitas-cahaya" name="intensitas-cahaya" class="form-input" placeholder="Contoh: 1000" step="any" min="0">
+        </div>
+      </section>
+
+      <section class="card card-efisiensi">
+        <h2 class="card-title">Efisiensi &amp; Waktu</h2>
+
+        <div class="form-group">
+          <label for="efisiensi-panel" class="form-label">Efisiensi Panel (%)</label>
+          <input type="number" id="efisiensi-panel" name="efisiensi-panel" class="form-input" placeholder="Contoh: 20" step="any" min="0" max="100">
+        </div>
+
+        <div class="form-group">
+          <label for="waktu-operasional" class="form-label">Waktu Operasional (jam)</label>
+          <input type="number" id="waktu-operasional" name="waktu-operasional" class="form-input" placeholder="Contoh: 5" step="any" min="0">
+        </div>
+
+        <button type="button" class="btn-hitung">Hitung Sekarang</button>
+      </section>
+
+      <section class="card card-hasil">
+        <h2 class="card-title">Hasil Perhitungan</h2>
+
+        <div class="result-group">
+          <span class="result-label">Daya yang Dihasilkan</span>
+          <span class="result-value" id="hasil-daya">0</span>
+          <span class="result-unit">W</span>
+        </div>
+
+        <div class="result-group">
+          <span class="result-label">Total Energi</span>
+          <span class="result-value" id="hasil-energi">0</span>
+          <span class="result-unit">kWh</span>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="guide-sidebar">
+
+      <h2 class="sidebar-title">Perkenalan</h2>
+
+      <section class="guide-section guide-perkenalan">
+        <p class="intro-text">Selamat datang di Solar Energy Calculator, sebuah aplikasi sederhana yang dibuat untuk membantu menghitung estimasi daya dan energi yang dapat dihasilkan oleh panel surya berdasarkan beberapa parameter dasar. Proyek ini disusun oleh kelompok yang beranggotakan:</p>
+        <ul class="team-list">
+          <li class="team-member"><span class="team-nim">535250060</span> - Adrian Rizki Bintang</li>
+          <li class="team-member"><span class="team-nim">535250063</span> - Luthfi Rahman</li>
+          <li class="team-member"><span class="team-nim">535250085</span> - Lucio Aurey Feliciano</li>
+          <li class="team-member"><span class="team-nim">535250101</span> - Neizar Apriansyah</li>
+          <li class="team-member"><span class="team-nim">535250102</span> - Fakhzul Rafli S</li>
+        </ul>
+        <p class="intro-text">Berikut disampaikan panduan penggunaan aplikasi beserta dasar teori yang digunakan dalam proses perhitungan.</p>
+      </section>
+
+      <section class="guide-section guide-cara-pakai">
+        <h3 class="guide-heading">Cara Penggunaan</h3>
+        <ol class="guide-list">
+          <li>Masukkan luas permukaan panel surya pada kolom "Luas Panel" dengan satuan meter persegi (m²).</li>
+          <li>Masukkan intensitas cahaya matahari yang mengenai panel dalam satuan W/m². Pada siang hari yang cerah, nilai ini umumnya berkisar antara 800–1000 W/m².</li>
+          <li>Masukkan nilai efisiensi panel dalam bentuk persen (%). Efisiensi menunjukkan seberapa besar kemampuan panel mengonversi cahaya matahari menjadi listrik; panel yang umum dijual di pasaran memiliki efisiensi sekitar 15–22%.</li>
+          <li>Masukkan lama waktu operasional panel dalam satuan jam.</li>
+          <li>Klik tombol "Hitung Sekarang" untuk menampilkan hasil perhitungan pada bagian Hasil Perhitungan.</li>
+        </ol>
+      </section>
+
+      <section class="guide-section guide-teori">
+        <h3 class="guide-heading">Dasar Teori</h3>
+
+        <p class="theory-text">Perhitungan pada aplikasi ini menggunakan dua rumus dasar sebagai berikut.</p>
+
+        <div class="formula-box formula-daya">
+          <p class="formula-equation">P = A × I × η</p>
+          <ul class="formula-keterangan">
+            <li>P = daya yang dihasilkan (Watt)</li>
+            <li>A = luas panel (m²)</li>
+            <li>I = intensitas cahaya matahari (W/m²)</li>
+            <li>η = efisiensi panel (dinyatakan dalam bentuk desimal, misalnya 20% menjadi 0.2)</li>
+          </ul>
+          <p class="theory-text">Semakin besar luas panel, semakin tinggi intensitas cahaya matahari, atau semakin tinggi efisiensi panel, maka daya yang dihasilkan akan semakin besar.</p>
+        </div>
+
+        <div class="formula-box formula-energi">
+          <p class="formula-equation">E = P × t</p>
+          <ul class="formula-keterangan">
+            <li>E = total energi yang dihasilkan (Wh, kemudian dibagi 1000 untuk memperoleh satuan kWh)</li>
+            <li>P = daya yang telah diperoleh dari rumus sebelumnya</li>
+            <li>t = lama waktu operasional panel (jam)</li>
+          </ul>
+          <p class="theory-text">Daya dan energi merupakan dua besaran yang berbeda. Daya menunjukkan kecepatan menghasilkan listrik pada suatu waktu tertentu, sedangkan energi menunjukkan jumlah total yang dihasilkan selama periode waktu tertentu. Oleh karena itu, energi diperoleh dengan mengalikan daya dengan waktu operasional.</p>
+        </div>
+      </section>
+
+    </aside>
+
+  </div>
+
+  <script>
+    document.querySelector('.btn-hitung').addEventListener('click', function () {
+      var luasPanel = parseFloat(document.getElementById('luas-panel').value) || 0;
+      var intensitasCahaya = parseFloat(document.getElementById('intensitas-cahaya').value) || 0;
+      var efisiensiPanel = parseFloat(document.getElementById('efisiensi-panel').value) || 0;
+      var waktuOperasional = parseFloat(document.getElementById('waktu-operasional').value) || 0;
+
+      var efisiensiDesimal = efisiensiPanel / 100;
+
+      var daya = luasPanel * intensitasCahaya * efisiensiDesimal;
+      var energiWh = daya * waktuOperasional;
+      var energiKwh = energiWh / 1000;
+
+      document.getElementById('hasil-daya').textContent = daya.toFixed(2);
+      document.getElementById('hasil-energi').textContent = energiKwh.toFixed(3);
+    });
+  </script>
+
+</body>
+</html>
